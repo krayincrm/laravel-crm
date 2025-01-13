@@ -84,10 +84,11 @@ class UserDataGrid extends DataGrid
             'index'           => 'created_at',
             'label'           => trans('admin::app.settings.users.index.datagrid.created-at'),
             'type'            => 'date',
-            'sortable'        => true,
             'searchable'      => true,
-            'filterable_type' => 'date_range',
             'filterable'      => true,
+            'sortable'        => true,
+            'filterable_type' => 'date_range',
+            'closure'         => fn ($row) => core()->formatDate($row->created_at),
         ]);
     }
 

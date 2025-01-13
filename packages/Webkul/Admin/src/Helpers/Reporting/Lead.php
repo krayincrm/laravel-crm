@@ -210,7 +210,7 @@ class Lead extends AbstractReporting
             ->resetModel()
             ->whereIn('lead_pipeline_stage_id', $this->wonStageIds)
             ->whereBetween('created_at', [$startDate, $endDate])
-            ->sum('lead_value');
+            ->avg('lead_value');
     }
 
     /**
@@ -239,7 +239,7 @@ class Lead extends AbstractReporting
             ->resetModel()
             ->whereIn('lead_pipeline_stage_id', $this->lostStageIds)
             ->whereBetween('created_at', [$startDate, $endDate])
-            ->sum('lead_value');
+            ->avg('lead_value');
     }
 
     /**

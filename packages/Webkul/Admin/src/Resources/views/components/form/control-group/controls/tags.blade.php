@@ -111,8 +111,6 @@
 
             methods: {
                 addTag: function() {
-                    console.log(this.name);
-                    
                     if (this.errors['temp-' + this.name]) {
                         return;
                     }
